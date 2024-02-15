@@ -18,12 +18,12 @@ body {
     left: 0;
 }
 
-/* Added border styling for navbar links */
+
 .navbar a {
     color: #fff;
     text-decoration: none;
     padding: 0.5rem 1rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Low-opacity white border */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .navbar a:hover {
@@ -53,7 +53,7 @@ p {
     justify-content: space-between;
 }
 
-button, .logout-button, .cancel-button { /* Style all buttons consistently */
+button, .logout-button, .cancel-button {
     padding: 0.5rem 1rem;
     background-color: #444;
     border: none;
@@ -66,6 +66,6 @@ button:hover, .logout-button:hover, .cancel-button:hover {
     background-color: #555;
 }
 
-.logout-button, .cancel-button { /* Optional styling for specific buttons */
-    text-decoration: none; /* Remove underline */
+.logout-button, .cancel-button {
+    text-decoration: none;
 }
