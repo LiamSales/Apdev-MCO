@@ -1,51 +1,88 @@
-body, html {
-    height: 100%;
-    margin: 0;    
+body {
+    background-color: #222;
+    color: #fff;
+    font-family: sans-serif;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;  
-    background-color: #000000;  
+    align-items: center;
+    min-height: 100vh;
 }
 
-.login-container {
-    width: 300px;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #abababe0;
-}
-
-.form-group {
-    margin-bottom: 10px;
-    margin-right: 10px;
-}
-
-input{
+.navbar {
+    background-color: #111;
     width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
+    padding: 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
 }
 
-.button-group{
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+}
+
+.navbar a:hover {
+    background-color: #333;
+}
+
+.login-box {
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: 5px;
+    background-color: #333;
+    width: 300px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+input {
+    padding: 0.5rem;
+    display: block;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    margin-bottom: 10px;
+}
+
+.button-group {
     display: flex;
-    justify-content: center;
-    align-items: center;  
+    justify-content: space-between;
 }
 
-#login{
-    margin-right: 10px;
-}
-
-button{
-    padding: 10px;
+.but {
+    padding: 0.5rem 1rem;
+    background-color: #444;
     border: none;
+    color: #fff;
     border-radius: 3px;
-    background-color: #007bff;
-    color: #ffffff;
     cursor: pointer;
 }
 
-button:hover{
-    background-color: #0056b3;
+.but:hover {
+    background-color: #555;
+}
+
+.register-button {
+    background-color: transparent; /* Use transparent for a link-like appearance */
+    border: 1px solid #ddd;
+    color: #ddd;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+}
+
+.register-button:hover {
+    color: #fff;
+    border-color: #fff;
 }
