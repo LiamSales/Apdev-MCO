@@ -19,15 +19,18 @@ body {
     z-index: 10;
 }
 
+/* Added border styling for navbar links */
 .navbar a {
     color: #fff;
     text-decoration: none;
     padding: 0.5rem 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Low-opacity white border */
 }
 
 .navbar a:hover {
     background-color: #333;
 }
+
 
 .register-box {
     margin: 2rem auto;
