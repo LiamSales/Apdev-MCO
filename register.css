@@ -18,12 +18,11 @@ body {
     left: 0;
 }
 
-/* Added border styling for navbar links */
 .navbar a {
     color: #fff;
     text-decoration: none;
     padding: 0.5rem 1rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Low-opacity white border */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .navbar a:hover {
@@ -77,6 +76,5 @@ button:hover, .back-button:hover {
 }
 
 .back-button {
-    /* Optional styling for the back button */
-    text-decoration: none; /* Remove underline */
+    text-decoration: none;
 }
