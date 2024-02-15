@@ -1,4 +1,4 @@
-body {
+body{
     background-color: #222;
     color: #fff;
     font-family: sans-serif;
@@ -9,7 +9,7 @@ body {
     min-height: 100vh;
 }
 
-.navbar {
+.navbar{
     background-color: #111;
     width: 100%;
     padding: 1rem;
@@ -18,19 +18,22 @@ body {
     left: 0;
 }
 
-.navbar a {
+.navbar a{
     color: #fff;
     text-decoration: none;
     padding: 0.5rem 1rem;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.navbar a:hover {
+.navbar a:hover{
     background-color: #333;
 }
 
+.logo{
+    height: 10px;
+}
 
-.register-box {
+.register-box{
     margin: 2rem auto;
     padding: 2rem;
     border-radius: 5px;
@@ -38,17 +41,17 @@ body {
     width: 300px;
 }
 
-h1 {
+h1{
     text-align: center;
     margin-bottom: 1rem;
 }
 
-label {
+label{
     display: block;
     margin-bottom: 0.5rem;
 }
 
-input {
+input{
     padding: 0.5rem;
     display: block;
     width: 100%;
@@ -57,12 +60,12 @@ input {
     margin-bottom: 10px;
 }
 
-.button-group {
+.button-group{
     display: flex;
     justify-content: space-between;
 }
 
-button, .back-button {
+button, .back-button{
     padding: 0.5rem 1rem;
     background-color: #444;
     border: none;
@@ -71,10 +74,10 @@ button, .back-button {
     cursor: pointer;
 }
 
-button:hover, .back-button:hover {
+button:hover, .back-button:hover{
     background-color: #555;
 }
 
-.back-button {
+.back-button{
     text-decoration: none;
 }

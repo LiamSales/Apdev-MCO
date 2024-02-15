@@ -18,16 +18,21 @@ body{
     left: 0;
 }
 
+.logo{
+    height: 10px;
+}
+
 .navbar a {
     color: #fff;
     text-decoration: none;
     padding: 0.5rem 1rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
 }
 
 .navbar a:hover {
     background-color: #333;
 }
+
 
 
 .login-box {
@@ -62,7 +67,7 @@ input {
     justify-content: space-between;
 }
 
-.but {
+.but{
     padding: 0.5rem 1rem;
     background-color: #444;
     border: none;
