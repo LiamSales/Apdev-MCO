@@ -18,12 +18,11 @@ body{
     left: 0;
 }
 
-/* Added border styling for navbar links */
 .navbar a {
     color: #fff;
     text-decoration: none;
     padding: 0.5rem 1rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Low-opacity white border */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .navbar a:hover {
@@ -77,7 +76,7 @@ input {
 }
 
 .register-button {
-    background-color: transparent; /* Use transparent for a link-like appearance */
+    background-color: transparent;
     border: 1px solid #ddd;
     color: #ddd;
     text-decoration: none;
