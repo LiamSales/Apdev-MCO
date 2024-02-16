@@ -1,5 +1,12 @@
+@font-face {
+    font-family: 'Vegan';
+    src: url('fonts/Vegan.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body{
-    background-color: #222;
+    background-color: #222222;
     color: #fff;
     font-family: sans-serif;
     display: flex;
@@ -38,7 +45,7 @@ body{
 #page_navigation {
     background-color: #111;
     width: 100%;
-    padding: 1rem;
+    padding: 0.5rem;
     position: fixed;
     bottom: 0;
     align-content: center;
@@ -49,10 +56,12 @@ body{
     text-decoration: none;
     padding: 0.5rem 1rem;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
+    font-size: small;
 }
 
 #page_navigation a:hover {
     background-color: #333;
+    font-style: italic;
 }
 
 .rating-container {
@@ -80,19 +89,30 @@ body{
 
 
 .reviews-container {
-    overflow-x: auto;
     scroll-snap-type: x mandatory;
     padding: 20px;
+
+    text-shadow: 2px 2px black;
 }
 
-.review {
-    width: 70vw;
-    margin-bottom: 20px;
+.review {   
+    width: 60vw;
+    margin-bottom: 20px;    
     padding: 20px;
-    border: 1px solid #333;
-    scroll-snap-align: start;
+    border: 4px solid #333;
+    border-radius: 25px;
+    scroll-snap-align: start;   
     transition: transform 0.3s ease;
     overflow: hidden;
+    background-color: #444444;
+}
+
+.preview{
+    width: 90%;
+    text-align: justify;
+    margin-left: auto;
+    margin-right: auto; 
+    font-size: small;   
 }
 
 .review:hover {
@@ -107,4 +127,49 @@ body{
     width: 100%;
     max-width: 100%;
     border-radius: 10px;
+}   
+
+#EstablishmentReviews{
+    margin-top: 50px;
+}   
+
+h1{ 
+    font-family: Vegan;
+    font-weight: lighter;   
+    font-stretch: 200%;
+}
+
+#review1{
+    background:
+        /* top, transparent black, faked with gradient */ 
+        linear-gradient(
+            45deg,
+          rgba(64, 64, 64, 0.5),    
+          rgba(0, 0, 0, 0.5)
+        ),
+        /* bottom, image */
+        url(images/r1.jpg);
+    }
+
+span.mark:hover {
+    color: lightblue;  
+    text-decoration: underline; 
+}
+
+span.mark:active {
+    background-color: lightblue;
+}
+
+span.by{
+    font-size: smaller;
+    font-weight: lighter;
+}
+
+span.username{
+    color:lightblue;
+}
+
+span.username:hover{
+    color:lightblue;
+    text-decoration: underline; 
 }
