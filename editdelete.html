@@ -1,8 +1,28 @@
 <html>
     <head>
         <title>Edit Review</title>
+        <link rel="stylesheet" href="editdelete.css">
     </head>
     <body>
-        
+        <h1 id="header">EDIT POST</h1>
+        <div id="editpane">
+            <form>
+                <input type="text" class="editarea" id="title" placeholder="Input Title..." value="One of the best pizzas in this country">
+                <br>
+                <span id="estname">Review for: Greenwich</span>
+                <br>
+                <label for="rating" id="ratinglbl">Rating:</label>
+                <input type="number" class="editarea" id="rating" value="5">
+                <label for="rating">/5</label>
+                <br>
+                <textarea type="text" class="editarea" id="reviewcontent" placeholder="Write your review here">Greenwich Pizza is hands down the epitome of pizza perfection! With its mouthwatering array of toppings, perfectly baked crust, and generous cheese, every bite is a heavenly experience. Whether you're craving classic flavors like Hawaiian or Pepperoni, or feeling adventurous with their specialty creations, Greenwich Pizza never disappoints. The harmony of flavors and the quality of ingredients make it stand out as the best pizza around. Plus, their commitment to consistency ensures that every slice is a slice of pizza paradise. Greenwich Pizza isn't just a meal; it's a culinary masterpiece that will leave you craving more with every delicious bite.</textarea>
+                <br>
+                <div id="buttons">
+                    <button type="submit" id="editbtn">Edit</button>
+                    <button type="submit" id="delbtn">Delete Post</button>
+                    <button type="submit" id="cancelbtn">Cancel</button>
+                </div>
+            </form>
+        </div>
     </body>
 </html>

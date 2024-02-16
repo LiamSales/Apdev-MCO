@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap');
+
+:root{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 18px;
+}
+
+body{
+    background-image: linear-gradient(rgb(29, 29, 29) , rgb(204, 204, 204), white, white, rgb(231, 231, 231), rgb(59,59,59))
+}
+
+h1{
+    position:absolute;
+    font-family: "Hammersmith One", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    letter-spacing: 5px;
+    margin: 25px;
+    color: white;
+    font-size: 50px;
+}
+
+.editarea{
+    margin: 10px;
+    background-color: rgb(43,43,43);
+    border: 0px;
+    resize: none;
+    overflow: hidden;
+    width: 96%;
+}
+
+#title{
+    letter-spacing: 0px;
+    font-size: 20px;
+    margin: 10px;
+    margin-bottom: 20px;
+    background-color: rgb(43,43,43);
+    border: 0px;
+    color: white;
+    font-family: "Hammersmith One", sans-serif;
+    width: 96%;
+    height: 28px;
+    overflow: hidden;
+    resize: none;
+}
+
+#ratinglbl{
+    margin: 12px;
+    margin-right: 1px
+}
+
+#rating{
+    margin-left: 12px;
+    width: 1em;
+    margin: 0px;
+    height: 18px;
+    color: white;
+    font-size: 18px;
+    overflow: hidden;
+    background-color: grey;
+    border: 2px solid grey;
+    border-radius: 2px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+#reviewcontent{
+    height: 30em;
+    letter-spacing: 0.1px;
+    line-height: 1.7em;
+    font-size: 20px;
+    color: white;
+    font-family: Roboto;
+    padding: 5px;
+    font-size: 13px;
+    overflow: auto;
+    text-align: justify;
+}  
+
+::placeholder{
+    letter-spacing: 0px;
+    font-size: 20px;
+    color: grey;
+    font-weight: 600;
+    font-family: Roboto;
+}
+
+#estname{
+    font-weight: 600;
+    margin-left: 12px;
+}
+
+#editpane{
+    position: absolute;
+    width: 60%;
+    height: auto;
+    color: white;
+    padding: 10px;
+    margin: 20vh 20vw;
+    background-color: rgb(43, 43, 43);
+    border-radius: 3px;
+    box-shadow: 0px 0px 15px rgb(36, 36, 36);
+}
+
+#buttons{
+    float: right;
+    margin: 5px 15px 15px 0px;
+}
+
+button{
+    font-size: 15px;
+    background-color: rgb(77, 77, 77);
+    color: white;
+    font-family: Roboto;
+    border: 0;
+    padding: 8px 12px;
+    border-radius: 3px;
+}
