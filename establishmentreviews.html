@@ -9,25 +9,53 @@
 </head>
 
 <body>
+
+    <div class="navbar">
+        <img src="images/logowhite.png" class="logo">
+        <a href="#">View Establishments</a>
+        <a href="#">Search Establishments</a>
+        <a href="#">Search Establishments</a>
+        <a href="establishmentreviews.html">Reviews</a>
+        <a href="register.html">Register account</a>
+        <a href="login.html">Login</a>
+        <a href="logout.html">Logout</a>
+    </div>
+
+
     <div id="EstablishmentReviews">
-        <h1>Establishment 1 Reviews</h1>
+        <h1>Establishment Reviews</h1>
         
-        <div class="review">
-            <h3>Review Title 1</h3>
-            <p class="rating">Rating: 4.5</p>
-            <p class="preview">review0 summary.</p>
-            <p class="helpful">Helpful: 15 | Unhelpful: 2</p>
-            <a href="full_review0.html">Read Full Review</a>
-        </div>
+        <div class="reviews-container">
+            <div class="review" id="review1">
+                <div class="restaurant-info">
+                    <img src="perico.jpg" alt="Restaurant 1">
+                    <h2>Restaurant 1</h2>
+                </div>
+                <h3>Review Title 1</h3>
+                <div class="rating-container">
+                    <div class="rating" style="width: 90%;"></div>
+                    <span class="rating-value">4.5</span>
+                </div>
+                <p class="preview">review1 summary.</p>
+                <p class="helpful">Helpful: 15 | Unhelpful: 2</p>
+                <a href="full_review0.html">Read Full Review</a>
+            </div>
 
-        <div class="review">
-            <h3>Review Title 2</h3>
-            <p class="rating">Rating: 3.8</p>
-            <p class="preview">review1 summary.</p>
-            <p class="helpful">Helpful: 10 | Unhelpful: 5</p>
-            <a href="full_review1.html">Read Full Review</a>
+            <div class="review" id="review2">
+                <div class="restaurant-info">
+                    <img src="agno.jpg" alt="Restaurant 2">
+                    <h2>Restaurant 2</h2>
+                </div>
+                <h3>Review Title 2</h3>
+                <div class="rating-container">
+                    <div class="rating" style="width: 76%;"></div>
+                    <span class="rating-value">3.8</span>
+                </div>
+                <p class="preview">review2 summary.</p>
+                <p class="helpful">Helpful: 10 | Unhelpful: 5</p>
+                <a href="full_review1.html">Read Full Review</a>
+            </div>
         </div>
-
 
         <div id="page_navigation">
             <a href="establishment_reviews_page_2.html">Next Page</a>
