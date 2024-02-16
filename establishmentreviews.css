@@ -156,21 +156,19 @@ h1{
     background:
         /* top, transparent black, faked with gradient */ 
         linear-gradient(
-            45deg,
-          rgba(64, 64, 64, 0.5),    
-          rgba(0, 0, 0, 0.5)
+          rgba(64, 64, 64, 0.5) ,    
+            black 50%
         ),
-        /* bottom, image */
+        /* bottom, image */ 
         url(images/r1.jpg);
 }
-
-#review2{
+    
+#review2{   
     background:
         /* top, transparent black, faked with gradient */ 
         linear-gradient(
-            45deg,
-            rgba(64, 64, 64, 0.5),    
-            rgba(0, 0, 0, 0.5)
+          rgba(64, 64, 64, 0.5) ,    
+            black 50%
         ),
         /* bottom, image */
         url(images/r2.jpg);
@@ -180,9 +178,8 @@ h1{
     background:
         /* top, transparent black, faked with gradient */ 
         linear-gradient(
-            45deg,
-            rgba(64, 64, 64, 0.5),    
-            rgba(0, 0, 0, 0.5)
+          rgba(64, 64, 64, 0.5) ,    
+            black 50%
         ),
         /* bottom, image */
         url(images/r3.jpg);
@@ -192,9 +189,8 @@ h1{
     background:
         /* top, transparent black, faked with gradient */ 
         linear-gradient(
-            45deg,
-            rgba(64, 64, 64, 0.5),    
-            rgba(0, 0, 0, 0.5)
+          rgba(64, 64, 64, 0.5) ,    
+            black 50%
         ),
         /* bottom, image */
         url(images/r4.jpg);
@@ -204,14 +200,13 @@ h1{
     background:
         /* top, transparent black, faked with gradient */ 
         linear-gradient(
-            45deg,
-            rgba(64, 64, 64, 0.5),    
-            rgba(0, 0, 0, 0.5)
+          rgba(64, 64, 64, 0.5) ,    
+            black 50%
         ),
         /* bottom, image */
         url(images/r5.webp);
 }
-
+    
 span.mark:hover {
     color: lightblue;  
     text-decoration: underline; 
