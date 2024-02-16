@@ -2,7 +2,9 @@
 
 body{
     background-repeat: no-repeat;
-    background-image: linear-gradient(rgb(29, 29, 29) , rgb(202, 202, 202), rgb(231, 231, 231), white, white)
+    background-color: #222;
+    color:white;
+    text-shadow: 2px 2px black;
 }
 
 h1{
