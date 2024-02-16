@@ -53,7 +53,7 @@ h1{
     margin-left: 12px;
     width: 1em;
     margin: 0px;
-    height: 18px;
+    height: 1.4em;
     color: white;
     font-size: 18px;
     overflow: hidden;
@@ -96,14 +96,22 @@ input::-webkit-inner-spin-button {
 
 #editpane{
     position: absolute;
-    width: 60%;
+    width: 40%;
     height: auto;
     color: white;
-    padding: 10px;
-    margin: 20vh 20vw;
+    padding:  10px 10px 10px 100px;
+    margin: 21vh 28vw;
     background-color: rgb(43, 43, 43);
     border-radius: 3px;
     box-shadow: 0px 0px 15px rgb(36, 36, 36);
+}
+
+#pfp{
+    position: absolute;
+    height: 200px;
+    margin: -10px -200px;
+    border: 3px solid rgb(43, 43, 43);
+    border-radius: 100%;
 }
 
 #buttons{
@@ -115,6 +123,16 @@ button{
     font-size: 15px;
     background-color: rgb(77, 77, 77);
     color: white;
+    font-family: Roboto;
+    border: 0;
+    padding: 8px 12px;
+    border-radius: 3px;
+}
+
+button:hover{
+    font-size: 15px;
+    background-color: white;
+    color: black;
     font-family: Roboto;
     border: 0;
     padding: 8px 12px;
