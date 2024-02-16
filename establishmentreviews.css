@@ -5,6 +5,13 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Riot';
+    src: url('fonts/ProtestRiot.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body{
     background-color: #303030;
     color: #fff;
@@ -76,11 +83,11 @@ body{
 
 .rating {
     height: 100%;
-    background-color: #f8d500;
+    background-color: green;
 }
 
 .rating-value {
-    margin-left: 5px;
+    margin-left: 5px;   
     color: #fff;
     font-weight: bold;
     position: absolute;
@@ -139,6 +146,12 @@ h1{
     font-stretch: 200%;
 }
 
+.restaurant-info h2{
+    font-family: Vegan;
+    font-weight: lighter;   
+    font-stretch: 200%;
+}
+
 #review1{
     background:
         /* top, transparent black, faked with gradient */ 
@@ -149,7 +162,55 @@ h1{
         ),
         /* bottom, image */
         url(images/r1.jpg);
-    }
+}
+
+#review2{
+    background:
+        /* top, transparent black, faked with gradient */ 
+        linear-gradient(
+            45deg,
+            rgba(64, 64, 64, 0.5),    
+            rgba(0, 0, 0, 0.5)
+        ),
+        /* bottom, image */
+        url(images/r2.jpg);
+}
+
+#review3{
+    background:
+        /* top, transparent black, faked with gradient */ 
+        linear-gradient(
+            45deg,
+            rgba(64, 64, 64, 0.5),    
+            rgba(0, 0, 0, 0.5)
+        ),
+        /* bottom, image */
+        url(images/r3.jpg);
+}
+
+#review4{
+    background:
+        /* top, transparent black, faked with gradient */ 
+        linear-gradient(
+            45deg,
+            rgba(64, 64, 64, 0.5),    
+            rgba(0, 0, 0, 0.5)
+        ),
+        /* bottom, image */
+        url(images/r4.jpg);
+}
+
+#review5{
+    background:
+        /* top, transparent black, faked with gradient */ 
+        linear-gradient(
+            45deg,
+            rgba(64, 64, 64, 0.5),    
+            rgba(0, 0, 0, 0.5)
+        ),
+        /* bottom, image */
+        url(images/r5.webp);
+}
 
 span.mark:hover {
     color: lightblue;  
@@ -172,4 +233,8 @@ span.username{
 span.username:hover{
     color:lightblue;
     text-decoration: underline; 
+}
+
+.helpful, .review h3, .review a{
+    font-family: Riot   ;
 }
