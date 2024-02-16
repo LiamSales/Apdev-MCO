@@ -1,0 +1,110 @@
+body{
+    background-color: #222;
+    color: #fff;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.navbar{
+    background-color: #111;
+    width: 100%;
+    padding: 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.logo{
+    height: 10px;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
+}
+
+.navbar a:hover {
+    background-color: #333;
+}
+
+#page_navigation {
+    background-color: #111;
+    width: 100%;
+    padding: 1rem;
+    position: fixed;
+    bottom: 0;
+    align-content: center;
+}
+
+#page_navigation a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
+}
+
+#page_navigation a:hover {
+    background-color: #333;
+}
+
+.rating-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    height: 20px;
+    border-radius: 5px;
+    background-color: #333;
+}
+
+.rating {
+    height: 100%;
+    background-color: #f8d500;
+}
+
+.rating-value {
+    margin-left: 5px;
+    color: #fff;
+    font-weight: bold;
+    position: absolute;
+    right: 10px;
+}
+
+
+.reviews-container {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 20px;
+}
+
+.review {
+    width: 70vw;
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #333;
+    scroll-snap-align: start;
+    transition: transform 0.3s ease;
+    overflow: hidden;
+}
+
+.review:hover {
+    transform: scale(1.1);
+}
+
+.restaurant-info {
+    overflow: hidden;
+}
+
+.restaurant-info img {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 10px;
+}
