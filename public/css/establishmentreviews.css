@@ -1,0 +1,326 @@
+@font-face {
+    font-family: 'Vegan';
+    src: url('/fonts/Vegan.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Riot';
+    src: url('/fonts/ProtestRiot.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body{
+    background-color: #222;
+    color: #fff;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;    
+    min-height: 100vh;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.navbar{
+    background-color: #111;
+    width: 100%;
+    padding: 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.logo{
+    height: 10px;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
+}
+
+.navbar a:hover {
+    background-color: #333;
+}
+
+#page_navigation {
+    background-color: #111;
+    width: 100%;
+    padding: 0.5rem;
+    position: fixed;
+    bottom: 0;
+    align-content: center;
+}
+
+#page_navigation a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
+    font-size: small;
+    
+}
+
+#page_navigation div {  
+    position: relative;
+    margin-left: 92%;
+    width: 8%;
+}
+
+#page_navigation a:hover {
+    background-color: #333;
+    font-style: italic;
+}
+
+.rating-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    height: 20px;
+    border-radius: 5px;
+    background-color: #333;
+}
+
+.rating {
+    height: 100%;
+    background-color: green;
+}
+
+.rating-value {
+    margin-left: 5px;   
+    color: #fff;
+    font-weight: bold;
+    position: absolute;
+    right: 10px;
+}
+
+
+.reviews-container {
+    scroll-snap-type: x mandatory;
+    padding: 20px;
+
+    text-shadow: 2px 2px black;
+}
+
+.review {   
+    width: 60vw;
+    margin-bottom: 40px;    
+    padding: 20px;
+    border: 4px solid #333;
+    border-radius: 25px;
+    scroll-snap-align: start;   
+    transition: transform 0.3s ease, height 0.3s ease;
+    overflow: hidden;
+    background-color: #444444;
+    height:20vw;
+}
+
+.preview{
+    width: 90%;
+    text-align: justify;
+    margin-left: auto;
+    margin-right: auto; 
+    font-size: small;   
+}
+
+.review:hover {
+    transform: scale(1.1);
+    height: auto;
+}
+
+.restaurant-info {
+    overflow: hidden;
+}
+
+.restaurant-info img {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 10px;
+}   
+
+#EstablishmentReviews{
+    margin-top: 50px;
+}   
+
+h1{ 
+    font-family: Vegan;
+    font-weight: lighter;   
+    font-stretch: 200%;
+}
+
+.restaurant-info h2{
+    font-family: Vegan;
+    font-weight: lighter;   
+    font-stretch: 200%;
+}
+
+#review1{
+    background:
+        /* top, transparent black, faked with gradient */ 
+        linear-gradient(
+          rgba(64, 64, 64, 0.5) ,    
+            black 50%
+        ),
+        /* bottom, image */ 
+        url(images/r1.jpg);
+}
+    
+#review2{   
+    background:
+        /* top, transparent black, faked with gradient */ 
+        linear-gradient(
+          rgba(64, 64, 64, 0.5) ,    
+            black 50%
+        ),
+        /* bottom, image */
+        url(images/r2.jpg);
+}
+
+#review3{
+    background:
+        /* top, transparent black, faked with gradient */ 
+        linear-gradient(
+          rgba(64, 64, 64, 0.5) ,    
+            black 50%
+        ),
+        /* bottom, image */
+        url(images/r3.jpg);
+}
+
+#review4{
+    background:
+        /* top, transparent black, faked with gradient */ 
+        linear-gradient(
+          rgba(64, 64, 64, 0.5) ,    
+            black 50%
+        ),
+        /* bottom, image */
+        url(images/r4.jpg);
+}
+
+#review5{
+    background:
+        /* top, transparent black, faked with gradient */ 
+        linear-gradient(
+          rgba(64, 64, 64, 0.5) ,    
+            black 50%
+        ),
+        /* bottom, image */
+        url(images/r5.webp);
+}
+    
+span.mark:hover {
+    color: lightblue;  
+    text-decoration: underline; 
+}
+
+span.mark:active {
+    background-color: lightblue;
+}
+
+span.by{
+    font-size: smaller;
+    font-weight: lighter;
+}
+
+span.username{
+    color:lightblue;
+}
+
+span.username:hover{
+    color:lightblue;
+    text-decoration: underline; 
+}
+
+.helpful, .review h3, .review a{
+    font-family: Riot   ;
+}
+
+.review-box {
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: 5px;
+    background-color: #333;
+    width: 600px;
+}
+
+#error {
+    background-color: #ffc0cb; /* Light red background color */
+    border: 1px solid #f08080; /* Red border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 15px; /* Padding around the message */
+    margin-top: 10px; /* Margin to separate the message from other content */
+    color: #333; /* Dark text color */
+    font-weight: bold; /* Bold text for emphasis */
+    display: none; /* Initially hide the message */
+    text-align: center; /* Center the text within the div */
+}
+  
+#error.show {
+    display: block; /* Show the message when the class "show" is added */
+}
+  
+
+h1 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+#rating{
+    display: flex;
+    flex-direction: row nowrap;
+    justify-content: center;
+}
+
+#rating div{
+    display: flex;
+    justify-content: left;
+    width:50px;
+    margin-right: 10px;
+}
+
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+input {
+    padding: 0.5rem;
+    display: block;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    margin-bottom: 10px;
+}
+
+
+#button-group button {
+    background-color: #555;
+}
+
+#button-group button {
+    padding: 0.5rem 1rem;
+    background-color: #444;
+    border: none;
+    color: #fff;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+#button-group button:hover {
+    background-color: #555;
+}
+
+form div {
+    display: flex;
+    justify-content: center;
+}

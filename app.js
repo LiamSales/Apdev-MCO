@@ -1,4 +1,5 @@
 const express = require('express');
+const exphbs = require('express-handlebars');
 const app = express();
 
 const path = require('path');
@@ -26,8 +27,6 @@ app.get('/reviews',(req, res) => {
     });
 
 });
-
-
 
 
 app.listen(3000);

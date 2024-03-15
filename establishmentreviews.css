@@ -120,7 +120,6 @@ body{
     transition: transform 0.3s ease, height 0.3s ease;
     overflow: hidden;
     background-color: #444444;
-    height:20vw;
 }
 
 .preview{
@@ -133,7 +132,6 @@ body{
 
 .review:hover {
     transform: scale(1.1);
-    height: auto;
 }
 
 .restaurant-info {
