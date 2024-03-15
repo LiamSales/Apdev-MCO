@@ -1,8 +1,8 @@
 const path = require('path');
 const fs = require('fs');
 
-function getDataUser(){
-    const filePath = path.join(__dirname, 'dataUsers.json');
+function getAccs(){
+    const filePath = path.join(__dirname, 'accounts.json');
 	let rawdata = fs.readFileSync(filePath);
 	return JSON.parse(rawdata);
 }
@@ -17,3 +17,9 @@ function getIdByUsername(username) {
     const user = users.find(user => user.username === username);
     return user ? user.userID : null;
 }
+
+module.exports.getAccs = getAccs;
+module.exports.getUserByID = getUserByID;
+module.exports.getUserIdByUsername = getUserIdByUsername;
+// npm init
+// npm i express express-handlebars body-parser mongoose

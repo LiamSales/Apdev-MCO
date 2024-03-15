@@ -4,10 +4,6 @@ const user = function(username, password, email) {
     this.email = email;
 }
 
-let users = [];
-
-
-
 document.addEventListener("DOMContentLoaded", function() {
     const form = document.getElementById("login-form");
     const errorElement = document.getElementById("error");
