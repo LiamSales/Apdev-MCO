@@ -2,11 +2,13 @@ $(document).ready(function(){
 
     $("#submit").click(function() {
         let title = $("#title").val();
-        let rat= $("input[name='rating_radio':checked").val();
+        let rat= $("input[name='rating_radio']:checked").val();
         let text = $("#review").val();
 
 
         display(title,rat,text);
+
+        console.log("test");
 
         
     });
@@ -36,8 +38,10 @@ $(document).ready(function(){
                         "</div>"+
                         "<p class='preview'>"+text+"</p><br><br>"+
                         "<br><br>"+
-                        "From the moment you step through the doors, you're greeted by an ambiance that seamlessly blends elegance with warmth. The soft glow of ambient lighting sets the stage for an evening filled with gastronomic delights. The decor, with its modern yet cozy aesthetic, immediately puts you at ease, making you feel like a welcomed guest in someone's home.<br><br>"+
-            
+                        "From the moment you step through the doors, you're greeted by an ambiance that seamlessly blends elegance with warmth. The soft glow of ambient lighting sets the stage for an evening filled with gastronomic delights. The decor, with its modern yet cozy aesthetic, immediately puts you at ease, making you feel like a welcomed guest in someone's home.<br><br>";
+        
+        console.log(newreview);
+
         $(".reviews-container").append(newreview);
     }
 
