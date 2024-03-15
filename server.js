@@ -1,16 +1,14 @@
 const express = require('express');
-const app = express();
-
 const path = require('path');
+const app = express();
+const handlebars = require('express-handlebars');
 
+const users = [];
+app.use(express.json()); 
+app.use(express.urlencoded({ extended: true }));
 
-app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.urlencoded({ extended: false }));
+const port = process.env.PORT || 3000;
 
-app.post('/login', (req, res) => {
-
-
+app.listen(port, () =>{
+    console.log('Listening at port: ' + port);
 });
-
-
-app.listen(3000);

@@ -1,0 +1,33 @@
+[
+    {
+        "ID": 1,
+        "emailadd": "marky.delacruz@gmail.com",
+        "username": "markyyy",
+        "password":"markydagoat123",
+        "profilePicture": "https://cdn.pixabay.com/photo/2016/08/20/05/38/avatar-1606916_1280.png"
+    },{
+        "ID": 2,
+        "emailadd": "rica.cruz@gmail.com",
+        "username": "RicaCruzcxcxz",
+        "password":"ricabacsilogpayer123",
+        "profilePicture": "https://staticg.sportskeeda.com/editor/2023/04/eced8-16818785936279-1920.jpg"
+    },{
+        "ID": 3,
+        "emailadd": "joy.reyes@gmail.com",
+        "username": "Joyiee",
+        "password": "trustinHisName123",
+        "profilePicture": "https://pics.craiyon.com/2023-10-23/903eec12f88642079733f99cf3e1eb17.webp"
+    }, {
+        "ID": 4,
+        "emailadd": "nick.makino@gmail.com",
+        "username": "NickzRoyalty@@",
+        "password":"nikmakinoyeye23",
+        "profilePicture": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Andrew_Tate_on_%27Anything_Goes_With_James_English%27_in_2021.jpg/640px-Andrew_Tate_on_%27Anything_Goes_With_James_English%27_in_2021.jpg"
+    },{
+        "ID": 5,
+        "emailadd": "angel.deguia@gmail.com",
+        "username": "cupidSmile@23",
+        "password":"smilealltheway24",
+        "profilePicture": "https://avatarfiles.alphacoders.com/995/99549.jpg"
+    }
+]
