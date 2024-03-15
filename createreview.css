@@ -1,0 +1,112 @@
+body{
+    background-color: #222;
+    color: #fff;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.navbar{
+    background-color: #111;
+    width: 100%;
+    padding: 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.logo{
+    height: 10px;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
+}
+
+.navbar a:hover {
+    background-color: #333;
+}
+
+
+
+.review-box {
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: 5px;
+    background-color: #333;
+    width: 600px;
+}
+
+#error {
+    background-color: #ffc0cb; /* Light red background color */
+    border: 1px solid #f08080; /* Red border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 15px; /* Padding around the message */
+    margin-top: 10px; /* Margin to separate the message from other content */
+    color: #333; /* Dark text color */
+    font-weight: bold; /* Bold text for emphasis */
+    display: none; /* Initially hide the message */
+    text-align: center; /* Center the text within the div */
+}
+  
+#error.show {
+    display: block; /* Show the message when the class "show" is added */
+}
+  
+
+h1 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+#rating{
+    display: flex;
+    flex-direction: row nowrap;
+    justify-content: center;
+}
+
+#rating div{
+    display: flex;
+    justify-content: left;
+    width:50px;
+    margin-right: 10px;
+}
+
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+input {
+    padding: 0.5rem;
+    display: block;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    margin-bottom: 10px;
+}
+
+
+#button-group button {
+    background-color: #555;
+}
+
+#button-group button {
+    padding: 0.5rem 1rem;
+    background-color: #444;
+    border: none;
+    color: #fff;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+#button-group button:hover {
+    background-color: #555;
+}
