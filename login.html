@@ -3,6 +3,7 @@
 <head>
     <title>Login</title>
     <link rel="stylesheet" href="login.css">
+    <script src="login.js"></script>
 </head>
 <body>
     <div class="navbar">
@@ -21,15 +22,18 @@
     </div>
     <div class="login-box">
         <h1>Login</h1>
-        <form method="post">
+        
+        <form id="login-form" method="post">
             <label for="username">Username:</label>
             <input type="text" id="username" name="username">
             <label for="password">Password:</label>
             <input type="password" id="password" name="password">
             <div class="button-group">
-                <button type="submit" class="but">Login</button>
-                <a href="register.html"><button class="but">Register</button></a>
+                <button type="submit" id="loginBtn" class="but">Login</button>
+                <button type="button" id="regisBtn" class="but">Register</button>
             </div>
+
+            <div id="error"></div>
         </form>
     </div>
 </body>

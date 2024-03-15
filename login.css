@@ -43,6 +43,23 @@ body{
     width: 300px;
 }
 
+#error {
+    background-color: #ffc0cb; /* Light red background color */
+    border: 1px solid #f08080; /* Red border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 15px; /* Padding around the message */
+    margin-top: 10px; /* Margin to separate the message from other content */
+    color: #333; /* Dark text color */
+    font-weight: bold; /* Bold text for emphasis */
+    display: none; /* Initially hide the message */
+    text-align: center; /* Center the text within the div */
+}
+  
+#error.show {
+    display: block; /* Show the message when the class "show" is added */
+}
+  
+
 h1 {
     text-align: center;
     margin-bottom: 1rem;
