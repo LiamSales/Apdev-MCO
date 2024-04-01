@@ -21,5 +21,3 @@ function getIdByUsername(username) {
 module.exports.getAccs = getAccs;
 module.exports.getUserByID = getUserByID;
 module.exports.getUserIdByUsername = getUserIdByUsername;
-// npm init
-// npm i express express-handlebars body-parser mongoose
