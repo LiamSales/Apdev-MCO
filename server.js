@@ -33,7 +33,7 @@ async function main () {
     // from this point onwards, we are going to receive json format data
     app.use(express.json());
 
-    app.use(router);
+    // app.use(router);
 
     try {
         // Connect to MongoDB

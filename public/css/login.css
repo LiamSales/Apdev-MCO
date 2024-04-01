@@ -1,4 +1,27 @@
-body{
+#accountMenu {
+    /* Remove default dropdown styling */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    
+    /* Style like a button */
+    display: inline-block;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    
+    /* Adjust colors based on your design */
+    background-color: #f0f0f0;
+    color: #333;
+  }
+  
+  #accountMenu:hover {
+    background-color: #e0e0e0;
+  }
+  
+  body{
     background-color: #222;
     color: #fff;
     font-family: sans-serif;
@@ -16,6 +39,10 @@ body{
     position: fixed;
     top: 0;
     left: 0;
+    overflow-x: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .logo{
