@@ -1,25 +1,26 @@
 {
   "name": "apdev-mco",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js"
+    "start": "node server.js",
+    "devStart": "nodemon server.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.20.2",
     "dotenv": "^16.4.5",
-    "ejs": "^3.1.9",
-    "express": "^4.18.3",
+    "express": "^4.19.2",
     "express-handlebars": "^7.1.2",
-    "fetch": "^1.1.0",
-    "mongoose": "^8.2.1",
-    "nodemon": "^3.1.0",
+    "handlebars": "^4.7.8",
+    "mongodb": "^6.5.0",
+    "mongoose": "^8.2.4",
     "path": "^0.12.7",
-    "require": "^2.4.20",
     "url": "^0.11.3"
-  }
+  },
+  "devDependencies": {},
+  "keywords": [],
+  "description": ""
 }
