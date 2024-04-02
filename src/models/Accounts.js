@@ -12,8 +12,8 @@ const AccountSchema = new Schema({
         trim: true,
         unique: true
     },
-    owner: { // False = Reviewer || True = Restaurant Owner
-        type: SchemaTypes.Boolean,
+    type: { // Reviewer || Restaurant Owner
+        type: SchemaTypes.String,
         required: true
     },
     email: { // X@X.X
@@ -31,6 +31,19 @@ const AccountSchema = new Schema({
         required: true
     }
 
+});
+
+AccountSchema.pre('save', async function(next) {
+    if (!this.isNew) {
+        return next();
+    }
+    
+    try {
+        const count = await this.constructor.countDocuments();
+        this.userId = count + 1;
+    } catch (error) {
+        return next(error);
+    }
 });
 
 const Accounts = model('Accounts', AccountSchema);

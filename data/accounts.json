@@ -1,20 +1,17 @@
 [
     {
-        "userID": 1,
         "username": "rainrain",
         "owner": true,
         "email": "rein_delacruz@dlsu.edu.ph",
         "password": "goaway",
         "fullname": "Rein Dela Cruz"
     }, {
-        "userID": 2,
         "username": "roroiroy",
         "owner": true,
         "email": "roimarc_bilbao@dlsu.edu.ph",
         "password": "adudu",
         "fullname": "Roimarc Bilbao"
     }, {
-        "userID": 3,
         "username": "jeromeasf",
         "owner": false,
         "email": "jerome_aglugub@dlsu.edu.ph",
@@ -22,7 +19,6 @@
         "fullname": "Jerome Aglugub"
 
     }, {
-        "userID": 4,
         "username": "miguelsales",
         "owner": false,
         "email": "liam.sales@dlsu.edu.ph",
