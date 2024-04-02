@@ -1,28 +1,33 @@
 [
     {
-        "ID": 0001,
-        "emailadd": "marky.delacruz@gmail.com",
-        "username": "markyyy",
-        "password":"markydagoat123"
+        "userID": 1,
+        "username": "rainrain",
+        "owner": true,
+        "email": "rein_delacruz@dlsu.edu.ph",
+        "password": "goaway",
+        "fullname": "Rein Dela Cruz"
     }, {
-        "ID": 0002,
-        "emailadd": "rica.cruz@gmail.com",
-        "username": "RicaCruzcxcxz",
-        "password":"ricabacsilogpayer123"
+        "userID": 2,
+        "username": "roroiroi",
+        "owner": true,
+        "email": "roimarc_bilbao@dlsu.edu.ph",
+        "password": "adudu",
+        "fullname": "Roimarc Bilbao"
     }, {
-        "ID": 3,
-        "emailadd": "joy.reyes@gmail.com",
-        "username": "Joyiee",
-        "password": "trustinHisName123"
+        "userID": 3,
+        "username": "jeromeasf",
+        "owner": false,
+        "email": "jerome_aglugub@dlsu.edu.ph",
+        "password": "mrbudders",
+        "fullname": "Jerome Aglugub"
+
     }, {
-        "ID": 0004,
-        "emailadd": "nick.makino@gmail.com",
-        "username": "NickzRoyalty@@",
-        "password":"nikmakinoyeye23"
-    }, {
-        "ID": 0005,
-        "emailadd": "angel.deguia@gmail.com",
-        "username": "cupidSmile@23",
-        "password":"smilealltheway24"
+        "userID": 4,
+        "username": "miguelsales",
+        "owner": false,
+        "email": "liam.sales@dlsu.edu.ph",
+        "password": "revolution",
+        "fullname": "Liam Sales"
     }
 ]
+

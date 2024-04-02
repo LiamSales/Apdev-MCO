@@ -1,7 +1,7 @@
 const { SchemaTypes, Schema, model } = require('mongoose'); 
 
 const AccountSchema = new Schema({
-    userID: { // XXXX || 0000
+    userID: {
         type: SchemaTypes.Number,
         required: true,
         unique: true
@@ -12,8 +12,8 @@ const AccountSchema = new Schema({
         trim: true,
         unique: true
     },
-    type: { // Reviewer or Restaurant Owner
-        type: SchemaTypes.String,
+    owner: { // False = Reviewer || True = Restaurant Owner
+        type: SchemaTypes.Boolean,
         required: true
     },
     email: { // X@X.X
@@ -25,6 +25,10 @@ const AccountSchema = new Schema({
     password: { 
         type: SchemaTypes.String,
         required: true,
+    },
+    fullname: {
+        type: SchemaTypes.String,
+        required: true
     }
 
 });

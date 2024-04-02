@@ -10,8 +10,8 @@ const RestaurantSchema = new Schema({
         type: SchemaTypes.Number,
         required: true
     },
-    owner: { // True or false
-        type: SchemaTypes.Boolean,
+    owner: { // Name of the owner
+        type: SchemaTypes.String,
         required: true
     }
 });
