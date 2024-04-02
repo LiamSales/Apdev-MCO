@@ -1,4 +1,4 @@
-import { SchemaTypes, Schema, model } from 'mongoose';
+const { SchemaTypes, Schema, model } = require('mongoose');
 
 const RestaurantSchema = new Schema({
     name: { // Name of the restaurant
@@ -10,13 +10,12 @@ const RestaurantSchema = new Schema({
         type: SchemaTypes.Number,
         required: true
     },
-    owner: { // Owner of the restaurant
-        type: SchemaTypes.String,
+    owner: { // True or false
+        type: SchemaTypes.Boolean,
         required: true
     }
 });
 
-const User = model('User', RestaurantSchema); // users collection 
+const Restaurants = model('Restaurants', RestaurantSchema); // users collection 
 
-export default User;
-// module.exports = User;
+module.exports = Restaurants;

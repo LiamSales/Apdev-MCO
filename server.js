@@ -6,6 +6,7 @@ const bodyParser = require('body-parser')
 const handlebars = require('express-handlebars');
 const hbs = require('handlebars');
 const router = require('./src/routes/IndexRouter.js');
+const initialize = require('./script/databaseInitialize.js');
 
 
 server.use(express.json()); 
@@ -21,7 +22,6 @@ server.use(router);
 
 
 
-// mongoose.connect('mongodb://localhost:27017/resturantDB');
 
 server.listen(process.env.PORT, async function(){
     await connectToMongo();
