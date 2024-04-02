@@ -17,10 +17,10 @@
     "handlebars": "^4.7.8",
     "mongodb": "^6.5.0",
     "mongoose": "^8.2.4",
+    "open": "^10.1.0",
     "path": "^0.12.7",
     "url": "^0.11.3"
   },
-  "devDependencies": {},
   "keywords": [],
   "description": ""
 }

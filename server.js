@@ -28,6 +28,9 @@ server.listen(process.env.PORT, async function(){
     console.log ('Connected to MongoDB.');
     console.log('Listening at port '+ process.env.PORT);
 
+    import('open').then(open => {
+        open.default(`http://localhost:${process.env.PORT}`);
+    });
 });
 
 // import "dotenv/config";
