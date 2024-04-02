@@ -1,8 +1,9 @@
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
+require('dotenv').config(); 
 
 const mongoURI = process.env.MONGODB_URI;
 
-export function connectToMongo(dbName = process.env.DB_NAME) {
+function connectToMongo(dbName = process.env.DB_NAME) {
     return mongoose.connect(mongoURI, {dbName: dbName});
 };
 
@@ -15,3 +16,5 @@ function signalHandler() {
 process.on("SIGINT", signalHandler);
 process.on("SIGTERM", signalHandler);
 process.on("SIGQUIT", signalHandler);
+
+module.exports = connectToMongo;

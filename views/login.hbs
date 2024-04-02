@@ -1,15 +1,18 @@
+<link rel="stylesheet" href="/css/login.css">
+
+
 <div class="login-box">
 	<h1>Login</h1>
-	<form id="login-form" method="post">
+	<form id="loginform" method="post" name="loginform">
 		<label for="username">Username:</label>
 		<input type="text" id="username" name="username" required>
 		<label for="password">Password:</label>
 		<input type="password" id="password" name="password" required>
 		<div class="button-group">
 			<button type="submit" id="loginBtn" class="but">Login</button>
-			<button type="button" id="regisBtn" class="but">Register</button>
+			<button type="button" id="registerBtn" class="but">Register</button>
 		</div>
-
-		<div id="error"></div>
 	</form>
 </div>
+
+<script src="/js/login.js"></script>

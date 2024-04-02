@@ -1,5 +1,4 @@
-import { SchemaTypes, Schema, model } from 'mongoose'; // ES6 syntax
-// const { SchemaTypes, Schema, model } = require('mongoose'); // CommonJS (default)
+const { SchemaTypes, Schema, model } = require('mongoose'); 
 
 const AccountSchema = new Schema({
     userID: { // XXXX || 0000
@@ -32,4 +31,4 @@ const AccountSchema = new Schema({
 
 const Accounts = model('Accounts', AccountSchema);
 
-export default Accounts;
+module.exports = Accounts;

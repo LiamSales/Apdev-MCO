@@ -11,7 +11,8 @@ const RestaurantSchema = new Schema({
         required: true
     },
     owner: { // Owner of the restaurant
-        
+        type: SchemaTypes.String,
+        required: true
     }
 });
 

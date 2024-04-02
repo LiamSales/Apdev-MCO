@@ -1,9 +1,10 @@
-const registerBtn = document.getElementById('registerBtn');
-const loginform = document.forms.loginform;
+const AccountMenu = document.getElementById('AccountMenu');
 
-registerBtn.addEventListener('click', (e) => {
-   
-    fetch('/register', {
+AccountMenu.addEventListener('change', function() {
+    const selectedValue = AccountMenu.value;
+
+
+    fetch('/' + selectedValue, {
         method: 'POST'
     })
     .then(response => response.json())
@@ -12,4 +13,3 @@ registerBtn.addEventListener('click', (e) => {
         window.location.href = data.redirectTo;
     });
 });
-
