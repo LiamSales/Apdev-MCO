@@ -28,9 +28,9 @@ server.listen(process.env.PORT, async function(){
     console.log ('Connected to MongoDB.');
     console.log('Listening at port '+ process.env.PORT);
 
-    // ! UNCOMMENT BEFORE PASSING PLEASE BELOW
-    // ! UNCOMMENT BEFORE PASSING PLEASE BELOW
-    // ! UNCOMMENT BEFORE PASSING PLEASE BELOW
+    // ! UNCOMMENT BEFORE PASSING - BELOW
+    // ! UNCOMMENT BEFORE PASSING - BELOW
+    // ! UNCOMMENT BEFORE PASSING - BELOW
 
     // import('open').then(open => {
     //     open.default(`http://localhost:${process.env.PORT}`);

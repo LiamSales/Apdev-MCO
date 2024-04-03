@@ -35,7 +35,6 @@ AccountRouter.post('/reg', async (req, res) => { // When the user is registering
 });
 
 AccountRouter.post('/log', async (req, res) => { // When the user is loggin on
-    console.log('recived');
     
     try {
         const user = await Accounts.findOne({ 
@@ -44,7 +43,7 @@ AccountRouter.post('/log', async (req, res) => { // When the user is loggin on
 
 
         if (!user) {
-            res.status(404).json({ message: 'User not found' });
+            res.status(404);
         } else {
             if(user.password === req.body.password) {
                 res.sendStatus(200);

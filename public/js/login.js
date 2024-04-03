@@ -45,6 +45,10 @@ form.addEventListener('submit', async(e) => {
             else if (response.status === 999) {
                 alert("Wrong password");
             }
+
+            else if (response.status === 404){
+                alert("Account not found");
+            }
             
             else {
                 console.log("Status code received: " + response.status);
