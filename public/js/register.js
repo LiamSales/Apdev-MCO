@@ -1,11 +1,19 @@
 const backBtn = document.getElementById('backBtn');
 const form = document.getElementById('registerform');
-const formD = document.forms.registerform;
-const formData = new FormData(formD);
 
 
-form.addEventListener('submit', (e) => {
+const fullname = document.getElementById('fullname').value
+const username = document.getElementById('username').value;
+const email = document.getElementById('email').value;
+const password = document.getElementById('password').value;
+const confirmPassword = document.getElementById('confirmpassword').value;
+const radioBtn = document.querySelector('input[name="options"]:checked');
+
+
+form.addEventListener('submit', async (e) => {
     e.preventDefault();
+    const formD = document.forms.registerform;
+    const formData = new FormData(formD);
 
     if(checkForm()){
     const radioBtn = document.querySelector('input[name="options"]:checked');
@@ -18,33 +26,42 @@ form.addEventListener('submit', (e) => {
     };
 
     const jString = JSON.stringify(myObj);
-    const password = document.getElementById('password');
-    const confirmpassword = document.getElementById('confirmpassword');
-        // fetch('/registerSubmit' + selectedValue, {
-        //     method: 'POST'
-        // })
-        // .then(response => response.json())
-        // .then(data => {
-        //     window.location.href = data.redirectTo;
-        // });
-        console.log(jString);
-        console.log("Submitted");
+
+        try {
+            const response = await fetch("/reg", {
+                method: 'POST',
+                body: jString,
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+            
+            if (response.status === 200) {
+                // This should take him in the homepage where they can see the different restaurants
+                alert("Success");
+                window.location.reload(); // ! For now only
+            } else {
+                console.log("Status code received: " + response.status);
+            }
+        } catch (err) {
+            console.error(err);
+        }
     }
 });
 
 backBtn.addEventListener('click', (e) => {
     e.preventDefault();
 
-    console.log("Hi"); 
+    // console.log(fullname);
 });
 
 
 function checkForm(){
-    const radioBtn = document.querySelector('input[name="options"]:checked');
-    password = document.getElementById('password').value;
-    confirmPassword = document.getElementById('confirmpassword').value;
+    const formD = document.forms.registerform;
+    const formData = new FormData(formD);
     
-    if(formData.get("fullname").trim() === "" || formData.get("username").trim() === "" || password.trim() === "" || formData.get("email").trim() === "" || radioBtn.value === null || confirmPassword.trim() === "") {
+    if(formData.get("fullname").trim() === "" || formData.get("username").trim() === "" || formData.get("password").trim() === "" || formData.get("email").trim() === "" 
+        || formData.get("confirmpassword").trim() === "") {
         alert("Please fill in all fields.");
         return false;
     } else {
@@ -59,8 +76,8 @@ function checkForm(){
 }
 
 function checkPasswords() {
-    password = document.getElementById('password').value;
-    confirmPassword = document.getElementById('confirmpassword').value;
+    const password = document.getElementById('password').value;
+    const confirmPassword = document.getElementById('confirmpassword').value;
 
     if(password !== confirmPassword) {
         return false;

@@ -33,19 +33,6 @@ const AccountSchema = new Schema({
 
 });
 
-AccountSchema.pre('save', async function(next) {
-    if (!this.isNew) {
-        return next();
-    }
-    
-    try {
-        const count = await this.constructor.countDocuments();
-        this.userId = count + 1;
-    } catch (error) {
-        return next(error);
-    }
-});
-
 const Accounts = model('Accounts', AccountSchema);
 
 module.exports = Accounts;
