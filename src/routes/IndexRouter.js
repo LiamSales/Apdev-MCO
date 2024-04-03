@@ -12,6 +12,12 @@ router.get("/", (req, res) => {
     });
 });
 
+router.get("/createreview", (req, res) => {
+    res.render("createreview", {
+        title: "Create a Review"
+    });
+
+});
 
 router.get("/reviews", (req, res) => {
     res.render("reviews", {
