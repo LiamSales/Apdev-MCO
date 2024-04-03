@@ -62,8 +62,16 @@ AccountRouter.post('/login', (req, res) => { // When the user is going to the lo
     res.json({ redirectTo: '/' });
 });
 
+AccountRouter.get("/login", (req, res) => {
+    res.render("login", {
+        title: "Login Page"
+    });
+});
+
 AccountRouter.get('/register', (req, res) => {
-    res.render('register');
+    res.render("register", {
+        title: "Register Page"
+    });
 });
 
 

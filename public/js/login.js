@@ -39,7 +39,15 @@ form.addEventListener('submit', async(e) => {
             if (response.status === 200) {
                 // This should take him in the homepage where they can see the different restaurants
                 alert("Success");
-                window.location.reload(); // ! For now only
+
+                fetch('/loginSuccess', {
+                    method: 'POST'
+                })
+                .then(response => response.json())
+                .then(data => {
+                    // Redirect to the URL received from the server
+                    window.location.href = data.redirectTo;
+                });
             } 
 
             else if (response.status === 999) {

@@ -1,30 +1,10 @@
-<html>
-    <head>
-        <title>Buyerview Search</title>
-        <link rel="stylesheet" href="search.css">
-    </head>
-    <body>
-        <div id="searchbar">
-            <img id="logo" src="images/logowhite.png">
-            <form method="get">
-                <input type="text" id="search" name="search" placeholder="Stores, Restaurants, Other Services">
-                <button type="submit" id="searchbutton">Search</button>
-            </form>
-        </div>
-        <div id="filters">
-            <form method="get">
-                <span id="filtertxt">Filters</span>
-                <input type="radio" id="hirate" name="filter" value="highestrating">
-                <label for="hirate">Best Ratings</label>
-                <input type="radio" id="lorate" name="filter" value="lowestrating">
-                <label for="lorate">Worst Ratings</label>
-                <input type="radio" id="mostrev" name="filter" value="mostreviews">
-                <label for="mostrev">Most Reviews</label>
-                <input type="radio" id="leastrev" name="filter" value="leastreviews">
-                <label for="leastrev">Least Reviews</label>
-            </form>
-        </div>
-        <div id="results">
+<link rel="stylesheet" type="text/css" href="/css/search.css">
+
+<body>
+    {{> searchbar}}
+    {{> filter}}
+
+    <div id="results">
             <div id="post1" class="post">
                 <span class="title">Greenwich Pizza</span>
                 <span class="rating">3.8/5</span>
@@ -56,5 +36,6 @@
                 <p class="desc">World Balance is a leading Filipino footwear and athletic apparel brand known for its stylish and functional products. Established in 1980, the brand has gained popularity for its high-quality shoes, sneakers, sandals, and activewear designed for various sports and casual activities. World Balance is committed to providing comfortable and affordable...</p>
             </div>
         </div>
-    </body>
-</html>
+</body>
+
+{{!-- <script src="/js/search.js"></script>  --}}
