@@ -33,11 +33,7 @@ body{
     background-color: #333;
 }
 
-#review{
-    resize: none;
-    width: 615px;
-    height: 250px; 
-}
+
 
 .review-box {
     margin: 2rem auto;
@@ -45,7 +41,6 @@ body{
     border-radius: 5px;
     background-color: #333;
     width: 600px;
-    
 }
 
 #error {

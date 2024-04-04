@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="css/login.css">
+    <script src="js/login.js"></script>
+</head>
+<body>
+    <div class="navbar">
+        <img src="images/logowhite.png" class="logo">
+        <a href="establishmentreviews.html">View Establishments</a>
+        <a href="search.html">Search Establishments</a>
+        <a href="public/reviews.html">Reviews</a>
+        <a href="register.html">Register account</a>
+        <a href="public/login.html">Login</a>
+        <a href="public/logout.html">Logout</a>
+        
+
+        
+    </div>
+    <div class="login-box">
+        <h1>Login</h1>
+        
+        <form id="login-form" method="post">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <div class="button-group">
+                <button type="submit" id="loginBtn" class="but">Login</button>
+                <button type="button" id="regisBtn" class="but">Register</button>
+            </div>
+
+            <div id="error"></div>
+        </form>
+    </div>
+</body>
+</html>
