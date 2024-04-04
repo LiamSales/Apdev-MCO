@@ -105,7 +105,6 @@ AccountRouter.get('/register', (req, res) => {
     });
 });
 
-
 AccountRouter.post('/profile', async (req, res) => { // When the user is going to the register page
     res.json({ redirectTo: '/profile' });
 });
@@ -157,6 +156,16 @@ AccountRouter.post('/loginSuccess', (req, res) => { // When the user is going to
 
 AccountRouter.post('/registerSuccess', (req, res) => { // When the user is going to the login page
     res.json({ redirectTo: '/login' });
+});
+
+AccountRouter.post('/profile/edit', (req, res) => {
+    res.json({ redirectTo: '/editprofile' });
+});
+
+AccountRouter.get('/editprofile', (req, res) => {
+    res.render("editprofile", {
+        title: "Edit Page"
+    });
 });
 
 
