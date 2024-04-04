@@ -1,62 +1,50 @@
 const Router = require('express');
 const AccountRouter = Router();
-const bcrypt = require('bcryptjs'); 
-const multer = require('multer');
-const storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-        cb(null, '../uploads');
-    },
-    filename: function (req, file, cb) {
-        cb(null, Date.now() + '-' + file.originalname);
-    }
-});
-const upload = multer({ storage: storage });
+const bcrypt = require('bcryptjs');
+const session = require('express-session');
+const bodyParser = require('body-parser');
 
 const Accounts = require('../models/Accounts.js')
 
-const count = 1;
+AccountRouter.use(session({
+    secret: 'secretKey', // Replace with your secret key
+    resave: false,
+    saveUninitialized: false
+}));
 
+AccountRouter.post('/reg', async (req, res) => { // When the user is registering a new account
+    try {
+        const count = await Accounts.countDocuments();
+        const nextUserId = count + 1;
+        const saltRounds = 10;
+        const plaintextPassword = req.body.password;
 
-AccountRouter.post('/register', async (req, res) => { // When the user is going to the register page
-    res.json({ redirectTo: '/register' });
-});
+        bcrypt.hash(plaintextPassword, saltRounds, async function(err, hash) {
+            if (err) {
+                res.status(500);
+            } else {
+                try{
+                    const newUser = await Accounts.create({
+                        userID: nextUserId,
+                        fullname: req.body.fullname,
+                        username: req.body.username,
+                        email: req.body.email,
+                        password: hash,
+                        type: req.body.type,
+                        profilepicture: req.body.profilepicture,
+                        bio: req.body.bio
+                    });
 
-AccountRouter.post('/reg', upload.single('profilePicture'), async (req, res) => { // When the user is registering a new account
-    const profilePicturePath = req.body.profilePicture;
-    console.log(profilePicturePath);
-    // try {
-    //     const count = await Accounts.countDocuments();
-    //     const nextUserId = count + 1;
-    //     const saltRounds = 10;
-    //     const plaintextPassword = req.body.password;
+                    res.status(200).json(newUser); 
+                } catch (error) {
+                    res.status(500);
+                }
+            }
+        });
 
-    //     bcrypt.hash(plaintextPassword, saltRounds, async function(err, hash) {
-    //         if (err) {
-    //             res.status(500);
-    //         } else {
-    //             try{
-    //                 const newUser = await Accounts.create({
-    //                     userID: nextUserId,
-    //                     fullname: req.body.fullname,
-    //                     username: req.body.username,
-    //                     email: req.body.email,
-    //                     password: hash,
-    //                     type: req.body.type,
-    //                     profilepicture: req.file ? req.file.path : '',
-    //                     bio: req.body.bio
-    //                 });
-
-    //                 res.status(200).json(newUser); 
-    //             } catch (error) {
-    //                 res.status(500);
-    //             }
-    //         }
-    //     });
-
-    // } catch (error) {
-    //     res.status(500);
-    // }
-
+    } catch (error) {
+        res.status(500);
+    }
 });
 
 AccountRouter.post('/log', async (req, res) => { // When the user is loggin on
@@ -66,9 +54,9 @@ AccountRouter.post('/log', async (req, res) => { // When the user is loggin on
         if (!user){
             res.sendStatus(404);
         } else {
-            const givenpass = req.body.password;
-            bcrypt.compare(givenpass, user.password, function(err, result){
+            bcrypt.compare(req.body.password, user.password, function(err, result){
                 if(result){
+                    req.session.userID = user.userID;
                     res.sendStatus(200);
                 }
                 else{
@@ -87,6 +75,20 @@ AccountRouter.post('/login', (req, res) => { // When the user is going to the lo
     res.json({ redirectTo: '/' });
 });
 
+AccountRouter.post('/register', async (req, res) => { // When the user is going to the register page
+    res.json({ redirectTo: '/register' });
+});
+
+AccountRouter.post('/editprofile', async (req, res) => { // When the user is going to the register page
+    res.json({ redirectTo: '/editprofile' });
+});
+
+AccountRouter.get('/editprofile', async (req, res) => { // When the user is going to the register page
+    res.render("editprofile", {
+        title: "Edit Profile"
+    });
+});
+
 AccountRouter.get("/login", (req, res) => {
     res.render("login", {
         title: "Login Page"
@@ -100,6 +102,39 @@ AccountRouter.get('/register', (req, res) => {
 });
 
 
+AccountRouter.post('/profile', async (req, res) => { // When the user is going to the register page
+    res.json({ redirectTo: '/profile' });
+});
+
+AccountRouter.get('/profile', (req, res) => {
+    // Check if user is authenticated (i.e., session contains user ID)
+    if (!req.session.userID) {
+        return res.status(401).json({ message: 'Unauthorized' });
+    }
+    // Retrieve user data based on user ID
+    const user = Accounts.findOne({ userID: req.session.userID })
+    .then(user => {
+        if (user) {
+          // User found
+          res.render("editprofile", {
+            title: "Testing",
+            username: user.username,
+            fullname: user.fullname,
+            url: user.profilepicture
+        });
+        } else {
+          // User not found
+          console.log('User not found');
+        }
+      })
+      .catch(error => {
+        // Handle error
+        console.error('Error finding user:', error);
+      });
+
+
+    
+});
 
 
 module.exports = AccountRouter;    

@@ -1,13 +1,18 @@
 const express = require('express');
 const server = express();
 require('dotenv').config(); 
-const connectToMongo = require('./src/conn.js');
 const bodyParser = require('body-parser')
 const handlebars = require('express-handlebars');
 const hbs = require('handlebars');
-const router = require('./src/routes/IndexRouter.js');
-const initialize = require('./script/databaseInitialize.js');
+const jwt = require('jsonwebtoken');
 
+const initialize = require('./script/databaseInitialize.js');
+const router = require('./src/routes/IndexRouter.js');
+const connectToMongo = require('./src/conn.js');
+
+const secret = 'secret';
+
+module.exports = { secret };
 
 server.use(express.json()); 
 server.use(express.urlencoded({ extended: true }));
