@@ -115,7 +115,7 @@ AccountRouter.post('/logout', (req, res) => {
         if (err) {
             return res.status(500).json({ message: 'Failed to log out' });
         }
-        console.log("Logout successful")
+        res.json({ redirectTo: '/login' });
     });
 });
 
