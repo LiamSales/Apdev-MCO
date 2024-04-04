@@ -112,7 +112,10 @@ AccountRouter.post('/logout', (req, res) => {
 AccountRouter.get('/profile', (req, res) => {
     // Check if user is authenticated (i.e., session contains user ID)
     if (!req.session.userID) {
-        return res.status(401).json({ message: 'Please login first' });
+        res.render("loginalert", {
+            title: "Alert"
+        });
+        return false;
     }
     // Retrieve user data based on user ID
     const user = Accounts.findOne({ userID: req.session.userID })
