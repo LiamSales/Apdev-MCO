@@ -82,16 +82,6 @@ AccountRouter.post('/register', async (req, res) => { // When the user is going 
     res.json({ redirectTo: '/register' });
 });
 
-AccountRouter.post('/profile', async (req, res) => { // When the user is going to the register page
-    res.json({ redirectTo: '/profile' });
-});
-
-AccountRouter.get('/profile', async (req, res) => { // When the user is going to the register page
-    res.render("profile", {
-        title: "profile"
-    });
-});
-
 AccountRouter.get("/login", (req, res) => {
     res.render("login", {
         title: "Login Page"
@@ -122,7 +112,7 @@ AccountRouter.post('/logout', (req, res) => {
 AccountRouter.get('/profile', (req, res) => {
     // Check if user is authenticated (i.e., session contains user ID)
     if (!req.session.userID) {
-        return res.status(401).json({ message: 'Unauthorized' });
+        return res.status(401).json({ message: 'Please login first' });
     }
     // Retrieve user data based on user ID
     const user = Accounts.findOne({ userID: req.session.userID })
@@ -144,9 +134,14 @@ AccountRouter.get('/profile', (req, res) => {
         // Handle error
         console.error('Error finding user:', error);
       });
+});
 
+AccountRouter.post('/loginSuccess', (req, res) => { // When the user is going to the login page
+    res.json({ redirectTo: '/reviews' });
+});
 
-    
+AccountRouter.post('/registerSuccess', (req, res) => { // When the user is going to the login page
+    res.json({ redirectTo: '/login' });
 });
 
 
