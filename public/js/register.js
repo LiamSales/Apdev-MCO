@@ -17,18 +17,18 @@ form.addEventListener('submit', async (e) => {
 
     
     if(checkForm()){
-    const radioBtn = document.querySelector('input[name="options"]:checked');
-    const myObj = { 
-        fullname: formData.get("fullname"),
-        username: formData.get("username"),
-        email: formData.get("email"),
-        password: formData.get("password"),
-        type: radioBtn.value,
-        profilePicture: formData.get("profilePicture"),
-        bio: formData.get("bio")
-    };
+        const radioBtn = document.querySelector('input[name="options"]:checked');
+        const myObj = { 
+            fullname: formData.get("fullname"),
+            username: formData.get("username"),
+            email: formData.get("email"),
+            password: formData.get("password"),
+            type: radioBtn.value,
+            profilepicture: formData.get("profilepicture"),
+            bio: formData.get("bio")
+        };
 
-    const jString = JSON.stringify(myObj);
+        const jString = JSON.stringify(myObj);
 
         try {
             const response = await fetch("/reg", {
@@ -78,7 +78,7 @@ function checkForm(){
     const formData = new FormData(formD);
     
     if(formData.get("fullname").trim() === "" || formData.get("username").trim() === "" || formData.get("password").trim() === "" || formData.get("email").trim() === "" 
-        || formData.get("confirmpassword").trim() === "" || formData.get("profilePicture").name === '') {
+        || formData.get("confirmpassword").trim() === "") {
         alert("Please fill in all fields.");
         return false;
     } else {

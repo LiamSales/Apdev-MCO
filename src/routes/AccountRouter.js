@@ -21,6 +21,16 @@ AccountRouter.post('/reg', async (req, res) => { // When the user is registering
         const nextUserId = count + 1;
         const saltRounds = 10;
         const plaintextPassword = req.body.password;
+        const defaultbio = "Something fun about myself!";
+        const defaultpfp = "https://i.stack.imgur.com/l60Hf.png"
+
+        if(req.body.profilepicture === ''){
+            req.body.profilepicture = defaultpfp;
+        }
+
+        if(req.body.bio === ''){
+            req.body.bio = defaultbio;
+        }
 
         bcrypt.hash(plaintextPassword, saltRounds, async function(err, hash) {
             if (err) {
@@ -37,8 +47,9 @@ AccountRouter.post('/reg', async (req, res) => { // When the user is registering
                         profilepicture: req.body.profilepicture,
                         bio: req.body.bio
                     });
+                    console.log('test')
 
-                    res.status(200).json(newUser); 
+                    res.sendStatus(200); 
                 } catch (error) {
                     res.status(500);
                 }
@@ -126,7 +137,8 @@ AccountRouter.get('/profile', (req, res) => {
             title: "Testing",
             username: user.username,
             fullname: user.fullname,
-            url: user.profilepicture
+            url: user.profilepicture,
+            bio: user.bio
         });
         } else {
           // User not found

@@ -41,6 +41,6 @@ const AccountSchema = new Schema({
     }
 });
 
-const Accounts = model('Accounts', AccountSchema);
+const Accounts = model('accounts', AccountSchema);
 
 module.exports = Accounts;
