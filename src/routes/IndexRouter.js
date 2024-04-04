@@ -26,17 +26,6 @@ router.get("/reviews", (req, res) => {
 
 });
 
-AccountRouter.post('/loginSuccess', (req, res) => { // When the user is going to the login page
-    res.json({ redirectTo: '/reviews' });
-});
-
-AccountRouter.post('/registerSuccess', (req, res) => { // When the user is going to the login page
-    res.json({ redirectTo: '/login' });
-});
-
 router.use(AccountRouter);
-
-
-
 
 module.exports = router;

@@ -1,0 +1,79 @@
+
+body{
+    background-color: #222;
+    color: #fff;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+#error {
+    background-color: #ffc0cb; /* Light red background color */
+    border: 1px solid #f08080; /* Red border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 15px; /* Padding around the message */
+    margin-top: 10px; /* Margin to separate the message from other content */
+    color: #333; /* Dark text color */
+    font-weight: bold; /* Bold text for emphasis */
+    display: none; /* Initially hide the message */
+    text-align: center; /* Center the text within the div */
+}
+  
+#error.show {
+    display: block; /* Show the message when the class "show" is added */
+}
+button{
+    padding: 0.5rem 1rem;
+    background-color: #444;
+    border: none;
+    color: #fff;
+    border-radius: 3px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+input {
+    padding: 0.5rem;
+    display: block;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    margin-bottom: 10px;
+}
+
+.profile-container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* Style for the profile picture */
+.profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover; /* Ensure the image covers the entire container */
+}
+
+/* Style for the username */
+.username {
+    margin-top: 20px;
+    font-size: 24px;
+}

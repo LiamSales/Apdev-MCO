@@ -1,8 +1,7 @@
-const btn = document.getElementById('btn');
+const pfpBtn = document.getElementById('pfpchange');
 
-btn.addEventListener('click', (e) => {
-   
-    fetch('/profile', {
+pfpBtn.addEventListener('click', (e) => {
+    fetch('/profile/edit', {
         method: 'POST'
     })
     .then(response => response.json())
