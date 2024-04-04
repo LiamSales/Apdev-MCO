@@ -1,6 +1,16 @@
 const Router = require('express');
 const AccountRouter = Router();
 const bcrypt = require('bcryptjs'); 
+const multer = require('multer');
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, '../uploads');
+    },
+    filename: function (req, file, cb) {
+        cb(null, Date.now() + '-' + file.originalname);
+    }
+});
+const upload = multer({ storage: storage });
 
 const Accounts = require('../models/Accounts.js')
 
@@ -11,36 +21,41 @@ AccountRouter.post('/register', async (req, res) => { // When the user is going 
     res.json({ redirectTo: '/register' });
 });
 
-AccountRouter.post('/reg', async (req, res) => { // When the user is registering a new account
-   
+AccountRouter.post('/reg', upload.single('profilePicture'), async (req, res) => { // When the user is registering a new account
+    const profilePicturePath = req.body.profilePicture;
+    console.log(profilePicturePath);
+    // try {
+    //     const count = await Accounts.countDocuments();
+    //     const nextUserId = count + 1;
+    //     const saltRounds = 10;
+    //     const plaintextPassword = req.body.password;
 
+    //     bcrypt.hash(plaintextPassword, saltRounds, async function(err, hash) {
+    //         if (err) {
+    //             res.status(500);
+    //         } else {
+    //             try{
+    //                 const newUser = await Accounts.create({
+    //                     userID: nextUserId,
+    //                     fullname: req.body.fullname,
+    //                     username: req.body.username,
+    //                     email: req.body.email,
+    //                     password: hash,
+    //                     type: req.body.type,
+    //                     profilepicture: req.file ? req.file.path : '',
+    //                     bio: req.body.bio
+    //                 });
 
-    try {
-        const count = await Accounts.countDocuments();
-        const nextUserId = count + 1;
-        const saltRounds = 10;
-        const plaintextPassword = req.body.password;
+    //                 res.status(200).json(newUser); 
+    //             } catch (error) {
+    //                 res.status(500);
+    //             }
+    //         }
+    //     });
 
-        bcrypt.hash(plaintextPassword, saltRounds, async function(err, hash) {
-            if (err) {
-                res.status(500).send('Error creating user: ' + error.message);
-            } else {
-                const newUser = await Accounts.create({
-                    userID: nextUserId,
-                    fullname: req.body.fullname,
-                    username: req.body.username,
-                    email: req.body.email,
-                    password: hash,
-                    type: req.body.type
-                });
-
-                res.sendStatus(200);
-            }
-        });
-
-    } catch (error) {
-        res.status(500).send('Error creating user: ' + error.message);
-    }
+    // } catch (error) {
+    //     res.status(500);
+    // }
 
 });
 

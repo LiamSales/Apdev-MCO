@@ -1,17 +1,19 @@
-const { SchemaTypes, Schema, model } = require('mongoose');
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+
 
 const RestaurantSchema = new Schema({
     name: { // Name of the restaurant
-        type: SchemaTypes.String,
+        type: String,
         required: true,
         unique: true
     },
     rating: { // X.XX 
-        type: SchemaTypes.Number,
+        type: Number,
         required: true
     },
     owner: { // Name of the owner
-        type: SchemaTypes.String,
+        type: String,
         required: true
     }
 });

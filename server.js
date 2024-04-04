@@ -15,10 +15,10 @@ server.set('view engine', 'hbs');
 server.engine('hbs', handlebars.engine({
     extname: 'hbs'
 }));
+server.use(bodyParser.json());
 server.set("view cache", false);
 server.use(express.static('public'));
 server.use(router);
-
 
 
 

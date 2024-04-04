@@ -14,6 +14,8 @@
         <input type="password" id="password" name="password" >
         <label for="confirmpassword">Confirm Password:</label>
         <input type="password" id="confirmpassword" name="confirmpassword" >
+        <label for="profilePicture">Upload your Avatar:</label>
+        <input type="file" id="profilePicture" name="profilePicture" accept="image/*" placeholder="Upload Profile Picture">
         Choose an account type:
         <div class="radio-buttons">
             <input type="radio" id="reviewer" name="options" value="reviewer" >
@@ -21,6 +23,8 @@
             <input type="radio" id="Owner" name="options" value="owner" >
             <label for="Owner">Owner</label>
         </div>
+        <label for="bio">Enter your bio (optional).</label>
+        <textarea id="bio" name="bio" placeholder="Say something fun about youself!"></textarea>
         <div class="button-group">
             <button type="submit">Create Account</button>
             <button id="backBtn">Back</button>

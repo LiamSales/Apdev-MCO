@@ -7,15 +7,6 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    overflow: hidden;
-}
-
-.register-box{
-    margin: 2rem auto;
-    padding: 2rem;
-    border-radius: 5px;
-    background-color: #333;
-    width: 300px;
 }
 
 h1{
@@ -37,11 +28,6 @@ input{
     margin-bottom: 10px;
 }
 
-.button-group{
-    display: flex;
-    justify-content: space-between;
-}
-
 button, .back-button{
     padding: 0.5rem 1rem;
     background-color: #444;
@@ -53,6 +39,43 @@ button, .back-button{
 
 button:hover, .back-button:hover{
     background-color: #555;
+}
+
+textarea{
+    box-sizing: border-box;
+    height: 200px;
+    width: 100%;
+    resize: none;
+    
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+background: #222; 
+}
+
+::-webkit-scrollbar-thumb {
+background: #888; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+background: #555; 
+}
+
+.register-box{
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: 5px;
+    background-color: #333;
+    width: 300px;
+}
+
+.button-group{
+    display: flex;
+    justify-content: space-between;
 }
 
 .back-button{
@@ -88,3 +111,6 @@ button:hover, .back-button:hover{
 .radio-buttons input[type="radio"]:checked + label {
     background-color: #666; /* Darker background color when selected */
 }
+
+
+

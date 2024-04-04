@@ -2,12 +2,12 @@ const backBtn = document.getElementById('backBtn');
 const form = document.getElementById('registerform');
 
 
-const fullname = document.getElementById('fullname').value
-const username = document.getElementById('username').value;
-const email = document.getElementById('email').value;
-const password = document.getElementById('password').value;
-const confirmPassword = document.getElementById('confirmpassword').value;
-const radioBtn = document.querySelector('input[name="options"]:checked');
+// const fullname = document.getElementById('fullname').value
+// const username = document.getElementById('username').value;
+// const email = document.getElementById('email').value;
+// const password = document.getElementById('password').value;
+// const confirmPassword = document.getElementById('confirmpassword').value;
+// const radioBtn = document.querySelector('input[name="options"]:checked');
 
 
 form.addEventListener('submit', async (e) => {
@@ -15,14 +15,17 @@ form.addEventListener('submit', async (e) => {
     const formD = document.forms.registerform;
     const formData = new FormData(formD);
 
+    
     if(checkForm()){
     const radioBtn = document.querySelector('input[name="options"]:checked');
     const myObj = { 
         fullname: formData.get("fullname"),
         username: formData.get("username"),
         email: formData.get("email"),
-        password: document.getElementById('password').value,
-        type: radioBtn.value
+        password: formData.get("password"),
+        type: radioBtn.value,
+        profilePicture: formData.get("profilePicture"),
+        bio: formData.get("bio")
     };
 
     const jString = JSON.stringify(myObj);
@@ -48,7 +51,7 @@ form.addEventListener('submit', async (e) => {
                     window.location.href = data.redirectTo;
                 });
             } else {
-                console.log("Status code received: " + response.status);
+                console.log("Status code received: " + response.status + " | Error creating the user");
             }
         } catch (err) {
             console.error(err);
@@ -57,9 +60,16 @@ form.addEventListener('submit', async (e) => {
 });
 
 backBtn.addEventListener('click', (e) => {
+    const formD = document.forms.registerform;
+    const formData = new FormData(formD);
     e.preventDefault();
 
-    // console.log(fullname);
+    console.log(formData.get("profilePicture"));
+    // if(formData.get("profilePicture").name === '')
+    //     console.log("Empty");
+    // else
+    //     console.log("Not empty");
+    
 });
 
 
@@ -68,7 +78,7 @@ function checkForm(){
     const formData = new FormData(formD);
     
     if(formData.get("fullname").trim() === "" || formData.get("username").trim() === "" || formData.get("password").trim() === "" || formData.get("email").trim() === "" 
-        || formData.get("confirmpassword").trim() === "") {
+        || formData.get("confirmpassword").trim() === "" || formData.get("profilePicture").name === '') {
         alert("Please fill in all fields.");
         return false;
     } else {

@@ -1,36 +1,43 @@
-const { SchemaTypes, Schema, model } = require('mongoose'); 
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
 const AccountSchema = new Schema({
     userID: {
-        type: SchemaTypes.Number,
+        type: Number,
         required: true,
         unique: true
     },
     username: {
-        type: SchemaTypes.String,
+        type: String,
         required: true,
         trim: true,
         unique: true
     },
     type: { // Reviewer || Restaurant Owner
-        type: SchemaTypes.String,
+        type: String,
         required: true
     },
     email: { // X@X.X
-        type: SchemaTypes.String,
+        type: String,
         required: true,
         trim: true,
         unique: true
     },
     password: { 
-        type: SchemaTypes.String,
+        type: String,
         required: true,
     },
     fullname: {
-        type: SchemaTypes.String,
+        type: String,
         required: true
+    },
+    profilepicture: {
+        type: String,
+        required: true
+    },
+    bio: {
+        type: String
     }
-
 });
 
 const Accounts = model('Accounts', AccountSchema);
