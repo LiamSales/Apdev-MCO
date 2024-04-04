@@ -25,6 +25,7 @@ form.addEventListener('submit', async(e) => {
             password: document.getElementById('password').value
         };
 
+
         const jString = JSON.stringify(myObj);
 
         try {

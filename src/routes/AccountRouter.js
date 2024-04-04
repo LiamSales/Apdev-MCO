@@ -1,5 +1,6 @@
 const Router = require('express');
 const AccountRouter = Router();
+const bcrypt = require('bcryptjs'); 
 
 const Accounts = require('../models/Accounts.js')
 
@@ -11,23 +12,32 @@ AccountRouter.post('/register', async (req, res) => { // When the user is going 
 });
 
 AccountRouter.post('/reg', async (req, res) => { // When the user is registering a new account
+   
+
 
     try {
         const count = await Accounts.countDocuments();
         const nextUserId = count + 1;
+        const saltRounds = 10;
+        const plaintextPassword = req.body.password;
 
-        const newUser = await Accounts.create({
-            userID: nextUserId,
-            fullname: req.body.fullname,
-            username: req.body.username,
-            email: req.body.email,
-            password: req.body.password,
-            type: req.body.type
+        bcrypt.hash(plaintextPassword, saltRounds, async function(err, hash) {
+            if (err) {
+                res.status(500).send('Error creating user: ' + error.message);
+            } else {
+                const newUser = await Accounts.create({
+                    userID: nextUserId,
+                    fullname: req.body.fullname,
+                    username: req.body.username,
+                    email: req.body.email,
+                    password: hash,
+                    type: req.body.type
+                });
+
+                res.sendStatus(200);
+            }
         });
 
-
-        
-        res.send('User created successfully');
     } catch (error) {
         res.status(500).send('Error creating user: ' + error.message);
     }
@@ -35,21 +45,21 @@ AccountRouter.post('/reg', async (req, res) => { // When the user is registering
 });
 
 AccountRouter.post('/log', async (req, res) => { // When the user is loggin on
-    
     try {
-        const user = await Accounts.findOne({ 
-            username: req.body.username
-        });
-
-
-        if (!user) {
-            res.status(404);
+        const user = await Accounts.findOne({ username: req.body.username });
+        
+        if (!user){
+            res.sendStatus(404);
         } else {
-            if(user.password === req.body.password) {
-                res.sendStatus(200);
-            } else {
-                res.sendStatus(999);
-            }
+            const givenpass = req.body.password;
+            bcrypt.compare(givenpass, user.password, function(err, result){
+                if(result){
+                    res.sendStatus(200);
+                }
+                else{
+                    res.sendStatus(999);
+                }
+            });
             
         }
 
