@@ -9,7 +9,10 @@ const Accounts = require('../models/Accounts.js')
 AccountRouter.use(session({
     secret: 'secretKey', // Replace with your secret key
     resave: false,
-    saveUninitialized: false
+    saveUninitialized: false,
+    cookie: {
+        maxAge: 1814400000
+    }
 }));
 
 AccountRouter.post('/reg', async (req, res) => { // When the user is registering a new account
@@ -105,6 +108,18 @@ AccountRouter.get('/register', (req, res) => {
 AccountRouter.post('/profile', async (req, res) => { // When the user is going to the register page
     res.json({ redirectTo: '/profile' });
 });
+
+AccountRouter.post('/logout', (req, res) => {
+    // Destroy session to log out user
+    req.session.destroy(err => {
+        if (err) {
+            return res.status(500).json({ message: 'Failed to log out' });
+        }
+        console.log("Logout successful")
+    });
+});
+
+// ! TESTING BELOW REMOVE BEFORE PASSING
 
 AccountRouter.get('/profile', (req, res) => {
     // Check if user is authenticated (i.e., session contains user ID)
