@@ -82,13 +82,13 @@ AccountRouter.post('/register', async (req, res) => { // When the user is going 
     res.json({ redirectTo: '/register' });
 });
 
-AccountRouter.post('/editprofile', async (req, res) => { // When the user is going to the register page
-    res.json({ redirectTo: '/editprofile' });
+AccountRouter.post('/profile', async (req, res) => { // When the user is going to the register page
+    res.json({ redirectTo: '/profile' });
 });
 
-AccountRouter.get('/editprofile', async (req, res) => { // When the user is going to the register page
-    res.render("editprofile", {
-        title: "Edit Profile"
+AccountRouter.get('/profile', async (req, res) => { // When the user is going to the register page
+    res.render("profile", {
+        title: "profile"
     });
 });
 
@@ -119,8 +119,6 @@ AccountRouter.post('/logout', (req, res) => {
     });
 });
 
-// ! TESTING BELOW REMOVE BEFORE PASSING
-
 AccountRouter.get('/profile', (req, res) => {
     // Check if user is authenticated (i.e., session contains user ID)
     if (!req.session.userID) {
@@ -131,7 +129,7 @@ AccountRouter.get('/profile', (req, res) => {
     .then(user => {
         if (user) {
           // User found
-          res.render("editprofile", {
+          res.render("profile", {
             title: "Testing",
             username: user.username,
             fullname: user.fullname,
