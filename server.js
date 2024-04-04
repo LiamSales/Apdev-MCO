@@ -1,7 +1,12 @@
 const express = require('express');
-const app = express();
-
-const path = require('path');
+const server = express();
+require('dotenv').config(); 
+const connectToMongo = require('./src/conn.js');
+const bodyParser = require('body-parser')
+const handlebars = require('express-handlebars');
+const hbs = require('handlebars');
+const router = require('./src/routes/IndexRouter.js');
+const initialize = require('./script/databaseInitialize.js');
 
 const usersData = [
 {
@@ -12,13 +17,18 @@ const usersData = [
 ];
 
 
-app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.urlencoded({ extended: false }));
+server.use(express.json()); 
+server.use(express.urlencoded({ extended: true }));
+server.set('view engine', 'hbs');
+server.engine('hbs', handlebars.engine({
+    extname: 'hbs'
+}));
+server.use(bodyParser.json());
+server.set("view cache", false);
+server.use(express.static('public'));
+server.use(router);
 
-app.post('/login', (req, res) => {
 
-
-});
 
 app.get('/reviews',(req, res) => {
     res.render("reviews", {
@@ -30,4 +40,16 @@ app.get('/reviews',(req, res) => {
 
 
 
-app.listen(3000);
+server.listen(process.env.PORT, async function(){
+    await connectToMongo();
+    console.log ('Connected to MongoDB.');
+    console.log('Listening at port '+ process.env.PORT);
+
+    // ! UNCOMMENT BEFORE PASSING - BELOW
+    // ! UNCOMMENT BEFORE PASSING - BELOW
+    // ! UNCOMMENT BEFORE PASSING - BELOW
+
+    // import('open').then(open => {
+    //     open.default(`http://localhost:${process.env.PORT}`);
+    // });
+});

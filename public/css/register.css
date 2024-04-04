@@ -9,38 +9,6 @@ body{
     min-height: 100vh;
 }
 
-.navbar{
-    background-color: #111;
-    width: 100%;
-    padding: 1rem;
-    position: fixed;
-    top: 0;
-    left: 0;
-}
-
-.navbar a{
-    color: #fff;
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.navbar a:hover{
-    background-color: #333;
-}
-
-.logo{
-    height: 10px;
-}
-
-.register-box{
-    margin: 2rem auto;
-    padding: 2rem;
-    border-radius: 5px;
-    background-color: #333;
-    width: 300px;
-}
-
 h1{
     text-align: center;
     margin-bottom: 1rem;
@@ -60,11 +28,6 @@ input{
     margin-bottom: 10px;
 }
 
-.button-group{
-    display: flex;
-    justify-content: space-between;
-}
-
 button, .back-button{
     padding: 0.5rem 1rem;
     background-color: #444;
@@ -78,6 +41,76 @@ button:hover, .back-button:hover{
     background-color: #555;
 }
 
+textarea{
+    box-sizing: border-box;
+    height: 200px;
+    width: 100%;
+    resize: none;
+    
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+background: #222; 
+}
+
+::-webkit-scrollbar-thumb {
+background: #888; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+background: #555; 
+}
+
+.register-box{
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: 5px;
+    background-color: #333;
+    width: 300px;
+}
+
+.button-group{
+    display: flex;
+    justify-content: space-between;
+}
+
 .back-button{
     text-decoration: none;
 }
+
+.radio-buttons{
+    display: flex;
+    background-color: #333; /* Dark background color */
+    color: #fff; /* Light text color */
+    padding: 10px;
+    justify-content: center;
+}
+
+.radio-buttons input[type="radio"] {
+    display: none; /* Hide the default radio button */
+}
+
+.radio-buttons label {
+    display: inline-block;
+    padding: 10px 20px; /* Increased padding for more obvious button appearance */
+    margin: 5px;
+    cursor: pointer;
+    border: 2px solid transparent; /* Add border for button appearance */
+    border-color: #555;
+    border-radius: 5px; /* Add border radius for rounded corners */
+}
+
+.radio-buttons label:hover {
+    background-color: #444; /* Darker background color on hover */
+}
+
+.radio-buttons input[type="radio"]:checked + label {
+    background-color: #666; /* Darker background color when selected */
+}
+
+
+
