@@ -31,7 +31,7 @@ AccountRouter.post('/reg', async (req, res) => { // When the user is registering
         if(req.body.bio === ''){
             req.body.bio = defaultbio;
         }
-
+        
         bcrypt.hash(plaintextPassword, saltRounds, async function(err, hash) {
             if (err) {
                 res.status(500);
@@ -47,7 +47,6 @@ AccountRouter.post('/reg', async (req, res) => { // When the user is registering
                         profilepicture: req.body.profilepicture,
                         bio: req.body.bio
                     });
-                    console.log('test')
 
                     res.sendStatus(200); 
                 } catch (error) {
