@@ -1,9 +1,4 @@
-import { Router } from 'express';
-
-import mongoose from 'mongoose';
-import Accounts from '../models/Accounts.js';
-import Restaurants from '../models/Restaurants.js';
-import Reviews from '../models/Reviews.js';
+const Router = require('express');
 
 const createReviewRouter = Router();
 
