@@ -4,28 +4,16 @@
 const Router = require('express');
 const AccountRouter = require('./AccountRouter.js');
 // const RestaurantRouter = require('./RestaurantsRouter.js');
+const CreateReviewRouter = requrre('./CreateReviewRouter.js');
 const router = Router();
 
 router.get("/", (req, res) => {
-    res.render("login", {
-        title: "Login Page"
-    });
-});
-
-router.get("/createreview", (req, res) => {
-    res.render("createreview", {
-        title: "Create a Review"
-    });
-
-});
-
-router.get("/reviews", (req, res) => {
-    res.render("reviews", {
-        title: "Buyerview Search"
-    });
-
+    res.render("login");
 });
 
 router.use(AccountRouter);
+
+router.use(CreateReviewRouter);
+
 
 module.exports = router;

@@ -1,0 +1,23 @@
+<link rel="stylesheet" href="editdelete.css">
+
+<h1 id="header">EDIT POST</h1>
+<div id="editpane">
+    <form>
+        <img src="images/pfp.jpg" id="pfp">
+        <input type="text" class="editarea" id="title" placeholder="Input Title..." value="{{title}}">
+        <br>
+        <span id="estname">Review for: {{establishment}}</span>
+        <br>
+        <label for="rating" id="ratinglbl">Rating:</label>
+        <input type="number" class="editarea" id="rating" value="{{rating}}">
+        <label for="rating">/5</label>
+        <br>
+        <textarea type="text" class="editarea" id="reviewcontent" placeholder="Write your review here">{{review}}</textarea>
+        <br>
+        <div id="buttons">
+            <button type="submit" id="editbtn">Save</button>
+            <button type="submit" id="delbtn">Delete Post</button>
+            <button type="submit" id="cancelbtn">Cancel</button>
+        </div>
+    </form>
+</div>
