@@ -1,4 +1,5 @@
 const Router = require('express');
+const Reviews = require('../models/Reviews');
 
 const createReviewRouter = Router();
 
