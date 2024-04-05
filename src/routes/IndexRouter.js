@@ -11,9 +11,9 @@ router.get("/", (req, res) => {
     res.render("login");
 });
 
-router.use(AccountRouter);
-
 router.use(CreateReviewRouter);
+
+router.use(AccountRouter);
 
 
 module.exports = router;

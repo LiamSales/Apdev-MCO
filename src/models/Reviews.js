@@ -3,21 +3,18 @@ const Schema = mongoose.Schema;
 const model = mongoose.model;
 
 
-const RestaurantSchema = new Schema({
-    reviewID: { // Id of the Review
-        type: Number,
-        required: true,
-        unique: true
+const ReviewSchema = new Schema({
+    user: { // Id of the Reviewer
+        type: String,
     },
-    userID: { // Id of the Reviewer
-        type: Number,
-        required: true,
-        unique: true
+    title: { // Title of the review
+        type: String,
+        required: true
     },
     name: { // Name of the restaurant
         type: String,
         required: true,
-        unique: true
+        unique: false
     },
     rating: { // 0 to 5 stars
         type: Number,
@@ -27,20 +24,14 @@ const RestaurantSchema = new Schema({
         type: String,
         required: true
     },
-    title: { // Title of the review
-        type: String,
-        required: true
-    },
     helpful: { // Amount who considers review helpful
-        type: Number,
-        required: true
+        type: Number
     },
     unhelpful: { // Amount who considers review unhelpful
-        type: Number,
-        required: true
+        type: Number
     }
 });
 
-const Restaurants = model('Reviews', RestaurantSchema); // users collection 
+const Reviews = model('Reviews', ReviewSchema); // users collection 
 
-module.exports = Restaurants;
+module.exports = Reviews;

@@ -10,35 +10,46 @@ postBtn?.addEventListener("click", async (e) =>{
     if(checkForm()){
         const radioBtn = document.querySelector('input[name="rating_radio"]:checked');
         const myObj = { 
-            user: 'roi',
             title: data.get("title"),
-            name: 'establishment',
             rating: radioBtn.value,
             review: data.get("review")
         };
     
-    const jString = JSON.stringify(Object.fromEntries(myObj));
+    const jString = JSON.stringify(myObj);
     console.log(jString);
 
     try{
-        const respo = await fetch("/reviews", {
+        const response = await fetch('/createreview', {
             method: 'POST',
             body: jString,
             headers: {
                 'Content-Type': 'application/json'
             }
-    });
+        });
 
-         if (response.status == 200) {
-            location.reload(); // refresh the page
+        if (response.status === 200) {
+            alert("done");
         } else {
             const message = `An error has occured. Status code: ${response.status}`;
             alert(message);
             console.log(message);
         }
     } catch (err) {
-        console.error(err);
+        console.log(err);
     }
 
+    }
+
+    function checkForm(){
+        const formD = document.forms.reviewForm;
+        const formData = new FormData(formD);
+        
+        if(formData.get("user") === "" || formData.get("title") === "" || formData.get("name") === "" ||
+             formData.get("review") === "") {
+            alert("Please fill in all fields.");
+            return false;
+        } else {
+            return true;
+        }
     }
 });
