@@ -39,7 +39,7 @@ form.addEventListener('submit', async (e) => {
                 }
             });
             
-            if (response.status === 200) {
+            if(response.status === 200){
                 // This should take him in the homepage where they can see the different restaurants
                 alert("Success");
                 fetch('/registerSuccess', {
