@@ -4,7 +4,7 @@
 const Router = require('express');
 const AccountRouter = require('./AccountRouter.js');
 // const RestaurantRouter = require('./RestaurantsRouter.js');
-const CreateReviewRouter = requrre('./CreateReviewRouter.js');
+const CreateReviewRouter = require('./CreateReviewRouter.js');
 const router = Router();
 
 router.get("/", (req, res) => {
