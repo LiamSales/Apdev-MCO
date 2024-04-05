@@ -6,6 +6,7 @@ const model = mongoose.model;
 const ReviewSchema = new Schema({
     user: { // Id of the Reviewer
         type: String,
+        required: true
     },
     title: { // Title of the review
         type: String,
@@ -14,7 +15,6 @@ const ReviewSchema = new Schema({
     name: { // Name of the restaurant
         type: String,
         required: true,
-        unique: false
     },
     rating: { // 0 to 5 stars
         type: Number,

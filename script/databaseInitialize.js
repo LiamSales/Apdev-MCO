@@ -1,5 +1,6 @@
 const AccountSchema = require('../src/models/Accounts.js');
 const RestaurantSchema = require('../src/models/Restaurants.js');
+const ReviewSchema = require('../src/models/Reviews.js')
 require('dotenv').config();
 const mongoose = require('mongoose');
 

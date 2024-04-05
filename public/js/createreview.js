@@ -1,7 +1,7 @@
-const reviewForm = document.forms.reviewForm;
-const postBtn = document.getElementById("submit");
 
+const postBtn = document.getElementById("submit");
 postBtn?.addEventListener("click", async (e) =>{
+    const reviewForm = document.forms.reviewForm;
     e.preventDefault();
     console.log("clicked");
 
